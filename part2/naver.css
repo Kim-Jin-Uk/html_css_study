@@ -1,0 +1,25 @@
+/*selecter 선택자*/
+
+#header-center{
+    margin: 0 auto;
+    width: 1080px;
+}
+
+#head_1_top{
+
+}
+
+#head_1_bot > h1{
+    display: inline-block;
+    width: 240px;
+}
+
+#head_1_bot > h2{
+    display: inline-block;
+    display: none;
+}
+
+#head_1_bot fieldset{
+    display: inline-block;
+    width: 520px;
+}
