@@ -1,0 +1,30 @@
+/* Cascading Style Sheet */
+/* 조상의 style을 물려받음 */
+/* 선택자(selector) */
+
+#header_center{
+    width: 1130px;
+    margin: 0 auto;
+}
+
+#header_search > h1{
+    width: 222px;
+    height: 52px;
+    display: inline-block;
+}
+
+#header_search > fieldset{
+    width: 582px;
+    height: 52px;
+    display: inline-block;
+}
+
+.blind {
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+}
+
