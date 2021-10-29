@@ -2,20 +2,139 @@
 /* 조상의 style을 물려받음 */
 /* 선택자(selector) */
 
-#header_center{
-    width: 1130px;
-    margin: 0 auto;
+*{
+    box-sizing: border-box;
 }
 
-#header_search > h1{
-    width: 222px;
-    height: 52px;
+body, html{
+    margin: 0;
+    padding: 0;
+    font-family: Dotum,"돋움", Helvetica,"Apple SD Gothic Neo",sans-serif;
+}
+
+main{
+    background: #eeeeee;
+    display: inline-block;
+    width: 100%;
+    padding: 4px;
+}
+
+.header_center{
+    width: 1130px;
+    margin: 0 auto;
+    position: relative;
+}
+
+nav{
+    height: 46px;
+    border-top: 1px solid #f1f3f6;
+    border-bottom: 1px solid #f1f3f6;
+    padding: 16px 0 0 4px;
+}
+
+header{
+    height: 170px;
+}
+
+#header_top span{
+    color: #888;
+    letter-spacing: -1px;
+    font-size: 11px;
+    line-height: 22px;
+}
+
+ul#nav_ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
     display: inline-block;
 }
 
+.nav_divider{
+    display: inline-block;
+    margin: 0 0 0 16px;
+    width: 1px;
+    height: 14px;
+    background: #ebeef3;
+}
+
+ul#nav_ul li{
+    display: inline-block;
+}
+
+#header_center a{
+    text-decoration: none;
+}
+
+#header_top{
+    margin-top: 10px;
+    float: right;
+}
+
+/* clear: both */
+#header_search{
+    clear: right;
+}
+
+/*vertical-align은 display가 inline, inline-block일때만*/
+#header_search h1{
+    width: 198px;
+    height: 48px;
+    display: inline-block;
+    background-image: url(./sp_search.png);
+    background-position: -4px -4px;
+    text-indent: 100%;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+    position: relative;
+    top: -6px;
+}
+
+/*
+    컨테이닝 블록 position이 static이면 안됨 inline인 경우도 안됨
+    relative - 상대적인 위치 - static position과 대비하여
+    absolute - 절대적인 위치 - containing block 대비하여
+    fixed - 고정적인 위치 - window(뷰포트)에 대비하여
+*/
 #header_search > fieldset{
-    width: 582px;
-    height: 52px;
+    width: 521px;
+    height: 49px;
+    margin-left: 20px;
+    padding: 12px 0px 12px 10px;
+    border: 2px solid #03cf5d;
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+}
+
+#header_search > fieldset button{
+    width: 49px;
+    height: 49px;
+    margin-left: 20px;
+    padding: 0;
+    border: none;
+    background: #03cf5d;
+    position: absolute;
+    right: -2px;
+    top: -2px;
+}
+
+span#search-image{
+    height: 21px;
+    width: 21px;
+    background: url(./sp_search.png) -3px -60px no-repeat;
+    margin: 14px;
+    display: inline-block;
+}
+
+#header_search input{
+    border: none;
+    outline: none;
+    padding: 0;
+    vertical-align: top;
+    width: 395px;
+    height: 23px;
     display: inline-block;
 }
 
@@ -26,5 +145,164 @@
     height: 1px;
     margin: -1px;
     overflow: hidden;
+}
+
+/*
+    nth child 가급적 지양
+    class를 사용하자
+*/
+
+/*
+    css 우선순위
+    레벨이 동일하면 아래에 적은 코드가 마지막
+    id 1 class 2 tag 3
+    치트키 !important - 최후의 수단
+*/
+
+/*
+    float
+    공중에 둥둥 떠다니는것 처럼 보임
+    하지만 컨텐츠를 제외한 영역을 감싼다
+*/
+
+ul#nav_ul li span:nth-child(2){
+    display: inline-block;
+    height: 16px;
+    background-image: url(https://s.pstatic.net/static/www/img/uit/2019/sp_nav.png);
+    background-repeat: no-repeat;
+    margin-left: 12px;
+}
+
+ul#nav_ul li:first-child span:nth-child(2){
+    width: 25px;
+    background-position: 0 -285px;
+    margin-left: 0px;
+}
+
+nav li:nth-child(2) span:nth-child(2) {
+    width: 27px;
+    background-position: -279px -52px;
+}
+
+nav li:nth-child(3) span:nth-child(2) {
+    width: 40px;
+    background-position: -100px -182px;
+}
+
+nav li:nth-child(4) span:nth-child(2) {
+    width: 40px;
+    background-position: -101px -156px;
+}
+
+nav li:nth-child(5) span:nth-child(2) {
+    width: 26px;
+    background-position: -279px -156px;
+}
+
+nav li:nth-child(6) span:nth-child(2) {
+    width: 25px;
+    background-position: -70px -285px;
+}
+
+nav li:nth-child(7) span:nth-child(2) {
+    width: 32px;
+    background-position: -125px -130px;
+}
+
+
+#search_ranking{
+    float: right;
+    display: inline-block;
+    margin-right: 100px;
+    margin-top: -4px;
+}
+
+span#rank_num{
+    margin-top: -9px;
+    color: #00ab33;
+    font-size: 16px;
+}
+
+span#search_keyboard{
+    width: 19px;
+    height: 11px;
+    display: inline-block;
+    background-image: linear-gradient(transparent,transparent),url(./sp_search.png);
+    background-position: -33px -60px;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+    margin: 0 5px;
+}
+
+span#search_history{
+    width: 9px;
+    height: 4px;
+    display: inline-block;
+    background-image: linear-gradient(transparent,transparent),url(./sp_search.png);
+    background-position: -87px -60px;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+    margin: 0 5px;
+}
+
+.main_item_block{
+    display: inline-block;
+    background: white;
+    margin: 4px;
+    float: left;
+}
+
+#main_ad{
+    width: 740px;
+    height: 120px;
+    background: #555;
+}
+
+#main_login{
+    width: 332px;
+    height: 120px;
+}
+
+#main_news1{
+    width: 740px;
+    height: 46px;
+}
+
+#main_news2{
+    width: 740px;
+    height: 246px;
+}
+
+#main_weather{
+    width: 332px;
+    height: 142px;
+}
+
+#main_ad2{
+    width: 332px;
+    height: 150px;
+    background: #555;
+}
+
+#main_title_die{
+    width: 740px;
+    height: 837px;
+}
+
+#main_shopping{
+    width: 332px;
+    height: 837px;
+}
+
+#main_ad3{
+    width: 740px;
+    height: 130px;
+    background: #777;
+}
+
+#main_ad4{
+    width: 332px;
+    height: 130px;
+    background: #555;
 }
 
