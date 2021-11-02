@@ -1,0 +1,22 @@
+footer{
+    margin: 0;
+    padding: 0;
+    height: 422px;
+    background: #fafbfc;
+}
+
+#footer-ad{
+    margin: 0;
+    display: inline-block;
+    height: 134px;
+    width: 1130px;
+}
+
+#footer-ad > div{
+    display: inline-block;
+    float: left;
+    height: 100%;
+    width: calc((100% - 60px) / 3);
+    background: #888888;
+    margin: 10px;
+}
